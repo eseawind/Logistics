@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+  "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+  "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <constant name="struts.multipart.maxSize" value="5000000000" />
+    
+    <package name="top" extends="json-default" /> 
+    <include file="struts_user.xml"></include>
+    <include file="struts_test.xml"></include>
+    <include file="struts_employee_profile.xml"></include>
+    <include file="struts_EmployeeSalary.xml"></include>
+    <include file="struts_city.xml"></include>
+    <include file="struts_warehouse.xml"></include>
+    <include file="struts_FreightRoute.xml"></include>
+    <include file="struts_CarType.xml"></include>
+    <include file="struts_Customer.xml"></include>
+    <include file="struts_Item.xml"></include>
+    <include file="struts_FreightContractor.xml"></include>
+    <include file="struts_Car.xml"></include>
+    <include file="struts_CostCenter.xml"></include>
+    <include file="struts_FreightManifest.xml"></include>
+    <include file="struts_FreightState.xml"></include>
+    <include file="struts_SellCenter.xml"></include>
+    <include file="struts_ShipmentManifest.xml"></include>
+    <include file="struts_ShipmentCost.xml"></include>
+    <include file="struts_FreightIncome.xml"></include>
+    <include file="struts_FreightCost.xml"></include>
+    <include file="struts_StockinManifest.xml"></include>
+    <include file="struts_StockoutManifest.xml"></include>
+    <include file="struts_StockTransferManifest.xml"></include>
+    <include file="struts_StockItem.xml"></include>
+    <include file="struts_InventoryManifest.xml"></include>
+    <include file="struts_upload.xml"></include>
+    <include file="struts_download.xml"></include>
+    <include file="struts_StockTransferFinance.xml"></include>
+    <include file="struts_StockoutFinance.xml"></include>
+    <include file="struts_StockinFinance.xml"></include>
+    <include file="struts_StockFinance.xml"></include>
+    <include file="struts_FinancialLog.xml"></include>
+    <include file="struts_Barcode.xml"></include>
+    <include file="struts_PaymentCollection.xml"></include>
+    <include file="struts_Message.xml"></include>
+    <include file="struts_SepcialStockIncome.xml"></include>
+    <include file="struts_Role.xml"></include>
+    <include file="struts_SystemInfo.xml"></include>
+    
+</struts>

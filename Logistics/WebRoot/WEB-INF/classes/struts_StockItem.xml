@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    			"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    			"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <package name="StockItem" extends="json-default">
+    
+    	<action name="StockItem.queryOnCondition" class="Logistics.Servlet.StockItemAction" method="queryOnCondition">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="StockItem.queryItemHistory" class="Logistics.Servlet.StockItemAction" method="queryItemHistory">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	<action name="StockItem.queryChangedInventoryItems" class="Logistics.Servlet.StockItemAction" method="queryChangedInventoryItems">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	<action name="StockItem.queryAllInventoryItems" class="Logistics.Servlet.StockItemAction" method="queryAllInventoryItems">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="StockItem.account" class="Logistics.Servlet.StockItemAction" method="account">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,data.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	<!-- 
+    	<action name="StockItem.delete" class="Logistics.Servlet.StockItemAction" method="delete">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	<action name="StockItem.approve" class="Logistics.Servlet.StockItemAction" method="approve">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	<action name="StockItem.audit" class="Logistics.Servlet.StockItemAction" method="audit">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="StockItem.update" class="Logistics.Servlet.StockItemAction" method="update">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="StockItem.queryOne" class="Logistics.Servlet.StockItemAction" method="queryOne">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,data.*,resultMapList.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="StockItem.insert" class="Logistics.Servlet.StockItemAction" method="insert">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	
+    	
+    	<action name="StockItem.queryItems" class="Logistics.Servlet.StockItemAction" method="queryItems">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,data.*,resultMapList.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="StockItem.queryCustomerQuote" class="Logistics.Servlet.StockItemAction" method="queryCustomerQuote">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,data.*
+    		</param>
+    		</result>
+    	</action>
+    	 -->
+    	
+    </package>
+    
+    
+    
+    
+</struts>

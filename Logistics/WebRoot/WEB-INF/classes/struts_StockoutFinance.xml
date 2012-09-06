@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    			"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    			"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <package name="StockoutFinance" extends="json-default">
+    
+    	<action name="StockoutFinance.export" class="Logistics.Servlet.StockoutFinanceAction" method="export">
+            <result name="success" type="stream">
+              <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">download</param>
+			  <param name="contentDisposition">attachment;filename="chu ku shou zhi.xls"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+			
+			<result name="error" type="json">
+			<param name="includeProperties">
+    		message,success,valid
+    		</param>
+			</result>
+    	</action>
+    	
+    	<action name="StockoutFinance.archive" class="Logistics.Servlet.StockoutFinanceAction" method="archive">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="StockoutFinance.unarchive" class="Logistics.Servlet.StockoutFinanceAction" method="unarchive">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="StockoutFinance.updateFinance" class="Logistics.Servlet.StockoutFinanceAction" method="updateFinance">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="StockoutFinance.queryOnCondition" class="Logistics.Servlet.StockoutFinanceAction" method="queryOnCondition">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	
+    	
+    </package>
+    
+    
+    
+    
+</struts>

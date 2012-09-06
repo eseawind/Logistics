@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    			"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    			"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <package name="download" extends="struts-default">
+    
+    <action name="downloadText" class="Logistics.Servlet.FileDownloadAction" method="method1">
+            <result name="success" type="stream">
+             <param name="contentType">Excel/xls</param>
+			  <param name="inputName">download</param>
+			  <param name="contentDisposition">attachment;filename="document.xls"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+    </action>
+    	
+    	
+    </package>
+    
+    
+    
+    
+</struts>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    			"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    			"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <package name="ShipmentCost" extends="json-default">
+    
+    	<action name="ShipmentCost.export" class="Logistics.Servlet.ShipmentCostAction" method="export">
+            <result name="success" type="stream">
+              <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">download</param>
+			  <param name="contentDisposition">attachment;filename="zhuang che zhi chu.xls"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+			
+			<result name="error" type="json">
+			<param name="includeProperties">
+    		message,success,valid
+    		</param>
+			</result>
+    	</action>
+    	
+    	<action name="ShipmentCost.archive" class="Logistics.Servlet.ShipmentCostAction" method="archive">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="ShipmentCost.unarchive" class="Logistics.Servlet.ShipmentCostAction" method="unarchive">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="ShipmentCost.updateCost" class="Logistics.Servlet.ShipmentCostAction" method="updateCost">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="ShipmentCost.queryOnCondition" class="Logistics.Servlet.ShipmentCostAction" method="queryOnCondition">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	
+    	
+    </package>
+    
+    
+    
+    
+</struts>

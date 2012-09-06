@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    			"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    			"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <package name="ShipmentManifest" extends="json-default">
+    
+    	<action name="ShipmentManifest.queryNameID" class="Logistics.Servlet.ShipmentManifestAction" method="queryNameID">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*
+    		</param>
+    		</result>
+    	</action>
+    	<action name="ShipmentManifest.delete" class="Logistics.Servlet.ShipmentManifestAction" method="delete">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	<action name="ShipmentManifest.print" class="Logistics.Servlet.ShipmentManifestAction" method="print">
+            <result name="success" type="stream">
+              <param name="contentType">html</param>
+			  <param name="inputName">download</param>
+			  <param name="contentDisposition">filename="fmprint.html"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+			<result name="error" type="json">
+			<param name="includeProperties">
+    		message,success,valid
+    		</param>
+			</result>
+    	</action>
+    	<action name="ShipmentManifest.update" class="Logistics.Servlet.ShipmentManifestAction" method="update">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="ShipmentManifest.queryOne" class="Logistics.Servlet.ShipmentManifestAction" method="queryOne">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,data.*,resultMapList.*,carTypeQuoteMapList.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="ShipmentManifest.insert" class="Logistics.Servlet.ShipmentManifestAction" method="insert">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="ShipmentManifest.queryOnCondition" class="Logistics.Servlet.ShipmentManifestAction" method="queryOnCondition">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="ShipmentManifest.queryConsigners" class="Logistics.Servlet.ShipmentManifestAction" method="queryConsigners">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount,data.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="ShipmentManifest.queryConsigneeCompanies" class="Logistics.Servlet.ShipmentManifestAction" method="queryConsigneeCompanies">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="ShipmentManifest.queryConsignees" class="Logistics.Servlet.ShipmentManifestAction" method="queryConsignees">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="ShipmentManifest.calculateFreightCost" class="Logistics.Servlet.ShipmentManifestAction" method="calculateFreightCost">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,data.*
+    		</param>
+    		</result>
+    	</action>
+    	<action name="ShipmentManifest.queryOneFreightManifest" class="Logistics.Servlet.ShipmentManifestAction" method="queryOneFreightManifest">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,data.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    </package>
+    
+    
+    
+    
+</struts>

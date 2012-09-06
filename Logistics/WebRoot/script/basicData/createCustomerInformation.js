@@ -1,0 +1,429 @@
+
+var _win_create_CCI = null;
+
+function onCreateCustomerInformation()
+{
+	if(null == _win_create_CCI)
+	{
+	    createWindow_create_CCI();
+	}else
+	{
+		_formPanel_createCustomer_CCI.getForm().reset();
+	}
+	_win_create_CCI.setPagePosition(GET_WIN_X(_win_create_CCI.width),GET_WIN_Y());
+    _win_create_CCI.show();
+}
+
+function createWindow_create_CCI()
+{
+	_win_create_CCI = new Ext.Window({
+        title: '新建客户信息',
+        iconCls: 'commonCreateSheet',
+        width: 675,
+        autoHeight: true,
+        closeAction: 'hide',
+        maximizable: false,
+        resizable: false,
+        items: _formPanel_createCustomer_CCI,
+        listeners: LISTENER_WIN_MOVE
+    });
+}
+
+var _formPanel_createCustomer_CCI = new Ext.FormPanel({
+	
+	layout: 'form',
+	style: 'margin:0px',
+	frame: true,
+	labelAlign: 'right',
+	bodyStyle: PADDING,
+	autoHeight: true,
+	autoScoll: true,
+	labelWidth: 70,
+	border: false,
+	buttonAlign: 'center',
+	
+	buttons:[
+	{
+		text: '保存',
+		iconCls: 'commonSave',
+		handler: function()
+		{
+			if(_formPanel_createCustomer_CCI.getForm().isValid())
+			{
+				_formPanel_createCustomer_CCI.getForm().submit({
+					url: 'Customer.insert.action',
+					waitTitle:"保存数据",
+					waitMsg: '正在保存...',
+					success:function(form,action){
+						_grid_CCI.getStore().reload();
+					},
+					failure: function(form,action){
+						FORM_FAILURE_CALLBACK(form,action,"数据保存失败");
+					}
+				});
+			}
+		}
+	},{
+		text: '重置',
+		iconCls: 'commonReset',
+		handler: function(){
+			_formPanel_createCustomer_CCI.getForm().reset();
+			_formPanel_createCustomer_CCI.findById('tab_id_CCI').focus();
+		}
+	},{
+		text: '取消',
+		iconCls: 'commonCancel',
+		handler: function(){ _win_create_CCI.hide(); }
+	}],
+	
+	items:[
+		
+		{//Row 1
+			layout: 'column',
+			border: false,
+			items: [
+			{//Column 1
+				columnWidth: '1',
+				layout: 'form',
+				border: false,
+				items: new Ext.form.ComboBox({
+				       xtype : 'combo',
+				       store : new Ext.data.SimpleStore({      
+				              fields : ["customerType"],
+				              data : [['合同客户'],['零散客户']]
+				       }),
+				       valueField : 'customerType',
+				       displayField : 'customerType',
+				       mode : 'local',
+				       id: 'tab_id_CCI',
+				       forceSelection : true,
+				       hiddenName : 'customerDTO.type',
+				       editable : false,
+				       triggerAction : 'all',
+				       fieldLabel: '客户类型',
+				       allowBlank : false,
+				       name : 'city',
+				       value: '合同客户',
+				       width:　200
+				})
+			}
+			]
+		},
+		{//Row 2
+			layout: 'column',
+			border: false,
+			items: [
+			{//Column 1
+					columnWidth: '0.5',
+					layout: 'form',
+					border: false,
+					items: [{
+						xtype: 'textfield',
+						fieldLabel: '客户名称',
+						allowBlank: false,
+						regex: REGEX_COMMON_S,
+						regexText: REGEX_COMMON_S_TEXT,
+						name: 'customerDTO.name',
+						width: 200
+					}]
+			},
+			{//Column 2
+				columnWidth: '0.5',
+				layout: 'form',
+				border: false,
+				items: [{
+					xtype: 'textfield',
+					fieldLabel: '联系人',
+					regex: REGEX_COMMON_S,
+					regexText: REGEX_COMMON_S_TEXT,
+					name: 'customerDTO.contact',
+					width: 200
+				}]
+			}]
+		},
+		{//Row 3
+			layout: 'column',
+			border: false,
+			items: [
+				{//Column 1
+					columnWidth: '0.5',
+					layout: 'form',
+					border: false,
+					items: [{
+						xtype: 'textfield',
+						fieldLabel: '联系电话',
+						regex: REGEX_COMMON_S,
+						regexText: REGEX_COMMON_S_TEXT,
+						name: 'customerDTO.phone',
+						width: 200
+					}]
+				},
+				{//Column 1
+					columnWidth: '0.5',
+					layout: 'form',
+					border: false,
+					items: [{
+						xtype: 'textfield',
+						fieldLabel: '邮件',
+						regex: REGEX_COMMON_S,
+						regexText: REGEX_COMMON_S_TEXT,
+						name: 'customerDTO.email',
+						width: 200
+					}]
+			}]
+		},
+		{//Row 4
+			layout: 'column',
+			border: false,
+			items: [
+				{//Column 1
+					columnWidth: '1',
+					layout: 'form',
+					border: false,
+					items: [{
+						xtype: 'textfield',
+						fieldLabel: '地址',
+						regex: REGEX_COMMON_M,
+						regexText: REGEX_COMMON_M_TEXT,
+						name: 'customerDTO.address',
+						width: 512
+					}]
+			}]
+		},
+		{//Row 7
+			layout: 'column',
+			border: false,
+			items: [
+				{//Column 1
+					columnWidth: '1',
+					layout: 'form',
+					border: false,
+					labelWidth: 570,
+					items: [{
+						xtype: 'label',
+						fieldLabel: '———————————————————入库费用报价———————————————————',
+						labelSeparator: ' '
+					}]
+			}]
+		},
+		{//Row 7+
+			layout: 'column',
+			border: false,
+			items: [
+			{//Column 1
+				columnWidth: '0.3',
+				layout: 'form',
+				border: false,
+				items: [
+				{
+					xtype: 'numberfield',
+					fieldLabel: '数量单价',
+					allowNegative: false,
+					value: 0,
+					maxValue: MAX_DOUBLE,
+					allowBlank: false,
+					selectOnFocus: true,
+					name: 'customerDTO.stockInCostPerCount',
+					width: NUMBERFIELDWIDTH
+				}]
+			},
+			{//Column 2
+				columnWidth: '0.3',
+				layout: 'form',
+				border: false,
+				items:[
+				{
+					xtype: 'numberfield',
+					fieldLabel: '体积单价',
+					allowNegative: false,
+					value: 0,
+					maxValue: MAX_DOUBLE,
+					allowBlank: false,
+					selectOnFocus: true,
+					name: 'customerDTO.stockInCostPerVolume',
+					width: NUMBERFIELDWIDTH
+				}]
+			},
+			{//Column 3
+				columnWidth: '0.4',
+				layout: 'form',
+				border: false,
+				items:[
+				{
+					xtype: 'numberfield',
+					fieldLabel: '重量单价',
+					allowNegative: false,
+					value: 0,
+					maxValue: MAX_DOUBLE,
+					allowBlank: false,
+					selectOnFocus: true,
+					name: 'customerDTO.stockInCostPerWeight',
+					width: NUMBERFIELDWIDTH
+				}]
+			}]
+		},
+		{//Row 8
+			layout: 'column',
+			border: false,
+			items: [
+				{//Column 1
+					columnWidth: '1',
+					layout: 'form',
+					border: false,
+					labelWidth: 570,
+					items: [{
+						xtype: 'label',
+						fieldLabel: '———————————————————出库费用报价———————————————————',
+						labelSeparator: ' '
+					}]
+			}]
+		},
+		{//Row 8+
+			layout: 'column',
+			border: false,
+			items: [
+			{//Column 1
+				columnWidth: '0.3',
+				layout: 'form',
+				border: false,
+				items: [
+				{
+					xtype: 'numberfield',
+					fieldLabel: '数量单价',
+					allowNegative: false,
+					value: 0,
+					maxValue: MAX_DOUBLE,
+					allowBlank: false,
+					selectOnFocus: true,
+					name: 'customerDTO.stockOutCostPerCount',
+					width: NUMBERFIELDWIDTH
+				}]
+			},
+			{//Column 2
+				columnWidth: '0.3',
+				layout: 'form',
+				border: false,
+				items:[
+				{
+					xtype: 'numberfield',
+					fieldLabel: '体积单价',
+					allowNegative: false,
+					value: 0,
+					maxValue: MAX_DOUBLE,
+					allowBlank: false,
+					selectOnFocus: true,
+					name: 'customerDTO.stockOutCostPerVolume',
+					width: NUMBERFIELDWIDTH
+				}]
+			},
+			{//Column 3
+				columnWidth: '0.4',
+				layout: 'form',
+				border: false,
+				items:[
+				{
+					xtype: 'numberfield',
+					fieldLabel: '重量单价',
+					allowNegative: false,
+					value: 0,
+					maxValue: MAX_DOUBLE,
+					allowBlank: false,
+					selectOnFocus: true,
+					name: 'customerDTO.stockOutCostPerWeight',
+					width: NUMBERFIELDWIDTH
+				}]
+			}]
+		},
+		{//Row 9
+			layout: 'column',
+			border: false,
+			items: [
+				{//Column 1
+					columnWidth: '1',
+					layout: 'form',
+					border: false,
+					labelWidth: 570,
+					items: [{
+						xtype: 'label',
+						fieldLabel: '———————————————————库存费用报价———————————————————',
+						labelSeparator: ' '
+					}]
+			}]
+		},
+		{//Row 9+
+			layout: 'column',
+			border: false,
+			items: [
+			{//Column 1
+				columnWidth: '0.3',
+				layout: 'form',
+				border: false,
+				items: [
+				{
+					xtype: 'numberfield',
+					fieldLabel: '数量单价',
+					allowNegative: false,
+					value: 0,
+					maxValue: MAX_DOUBLE,
+					allowBlank: false,
+					selectOnFocus: true,
+					name: 'customerDTO.stockCostPerCount',
+					width: NUMBERFIELDWIDTH
+				}]
+			},
+			{//Column 2
+				columnWidth: '0.3',
+				layout: 'form',
+				border: false,
+				items:[
+				{
+					xtype: 'numberfield',
+					fieldLabel: '体积单价',
+					allowNegative: false,
+					value: 0,
+					maxValue: MAX_DOUBLE,
+					allowBlank: false,
+					selectOnFocus: true,
+					name: 'customerDTO.stockCostPerVolume',
+					width: NUMBERFIELDWIDTH
+				}]
+			},
+			{//Column 3
+				columnWidth: '0.4',
+				layout: 'form',
+				border: false,
+				items:[
+				{
+					xtype: 'numberfield',
+					fieldLabel: '重量单价',
+					allowNegative: false,
+					value: 0,
+					maxValue: MAX_DOUBLE,
+					allowBlank: false,
+					selectOnFocus: true,
+					name: 'customerDTO.stockCostPerWeight',
+					width: NUMBERFIELDWIDTH
+				}]
+			}]
+		},
+		{//Row last
+			layout: 'column',
+			border: false,
+			items: [
+				{//Column 1
+					columnWidth: '1',
+					layout: 'form',
+					border: false,
+					items: [{
+						xtype: 'textfield',
+						fieldLabel: '备注',
+						regex: REGEX_COMMON_M,
+						regexText: REGEX_COMMON_M_TEXT,
+						name: 'customerDTO.remarks',
+						width: 512
+					}]
+			}]
+		}
+	]
+});
+

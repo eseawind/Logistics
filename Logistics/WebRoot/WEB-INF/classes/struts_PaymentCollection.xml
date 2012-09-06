@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    			"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    			"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <package name="PaymentCollection" extends="json-default">
+    
+    
+    	<action name="PaymentCollection.export" class="Logistics.Servlet.PaymentCollectionAction" method="export">
+            <result name="success" type="stream">
+              <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">download</param>
+			  <param name="contentDisposition">attachment;filename="dai shou huo kuan.xls"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+			
+			<result name="error" type="json">
+			<param name="includeProperties">
+    		message,success,valid
+    		</param>
+			</result>
+    	</action>
+    	<action name="PaymentCollection.update" class="Logistics.Servlet.PaymentCollectionAction" method="update">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="PaymentCollection.archive" class="Logistics.Servlet.PaymentCollectionAction" method="archive">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="PaymentCollection.unarchive" class="Logistics.Servlet.PaymentCollectionAction" method="unarchive">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="PaymentCollection.updateIncome" class="Logistics.Servlet.PaymentCollectionAction" method="updateIncome">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="PaymentCollection.queryOnCondition" class="Logistics.Servlet.PaymentCollectionAction" method="queryOnCondition">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount,data.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	
+    </package>
+    
+    
+    
+    
+</struts>

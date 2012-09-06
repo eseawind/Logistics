@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    			"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    			"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <package name="user" extends="json-default">
+    	
+    	<action name="User.updatePassword" class="Logistics.Servlet.UserAction" method="updatePassword">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="queryCurrentUser" class="Logistics.Servlet.UserAction" method="queryCurrentUser">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,currentUserID,roleName,valid,data.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="logout" class="Logistics.Servlet.UserAction" method="logout">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	
+    	<action name="updateUser" class="Logistics.Servlet.UserAction" method="updateUser">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	<action name="getAUser" class="Logistics.Servlet.UserAction" method="getAUser">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,data.*,valid
+    		</param>
+    		</result>
+    	</action>
+    	<action name="deleteUsers" class="Logistics.Servlet.UserAction" method="deleteUsers">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	<action name="userSignIn" class="Logistics.Servlet.UserAction" method="userSignIn">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="listUsers" class="Logistics.Servlet.UserAction" method="listUsers">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,userList.*,qualifiedAmount,success,valid
+    		</param>
+    		
+    		</result>
+    	</action>
+    	
+    	<action name="getAllRoles" class="Logistics.Servlet.UserAction" method="getAllRoles">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,roleList.*,success,valid
+    		</param>
+    		
+    		</result>
+    	</action>
+    	
+    	<action name="createUser" class="Logistics.Servlet.UserAction" method="createUser">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		
+    		</result>
+    	</action>
+   			
+    </package>
+    
+    
+    
+    
+</struts>

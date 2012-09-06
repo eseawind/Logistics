@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    			"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    			"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <package name="FreightContractor" extends="json-default">
+    
+    	<action name="FreightContractor.queryNameID" class="Logistics.Servlet.FreightContractorAction" method="queryNameID">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*
+    		</param>
+    		</result>
+    	</action>
+    	<action name="FreightContractor.delete" class="Logistics.Servlet.FreightContractorAction" method="delete">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	<action name="FreightContractor.deleteCTQuote" class="Logistics.Servlet.FreightContractorAction" method="deleteCTQuote">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	<action name="FreightContractor.deleteFRQuote" class="Logistics.Servlet.FreightContractorAction" method="deleteFRQuote">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="FreightContractor.update" class="Logistics.Servlet.FreightContractorAction" method="update">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="FreightContractor.queryOne" class="Logistics.Servlet.FreightContractorAction" method="queryOne">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,data.*,resultMapList.*,carTypeQuoteMapList.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="FreightContractor.insert" class="Logistics.Servlet.FreightContractorAction" method="insert">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	<action name="FreightContractor.insertFRQuote" class="Logistics.Servlet.FreightContractorAction" method="insertFRQuote">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	<action name="FreightContractor.insertCTQuote" class="Logistics.Servlet.FreightContractorAction" method="insertCTQuote">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="FreightContractor.queryOnCondition" class="Logistics.Servlet.FreightContractorAction" method="queryOnCondition">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	<action name="FreightContractor.queryCTOnCondition" class="Logistics.Servlet.FreightContractorAction" method="queryCTOnCondition">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	<action name="FreightContractor.queryFROnCondition" class="Logistics.Servlet.FreightContractorAction" method="queryFROnCondition">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	
+    </package>
+    
+    
+    
+    
+</struts>
