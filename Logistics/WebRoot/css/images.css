@@ -1,0 +1,320 @@
+
+/**************Menu Icons***************/
+
+.basicData {
+    background-image:url(../images/menu/basicData.png)!important;
+}
+.manageFinance {
+    background-image:url(../images/menu/manageFinance.png)!important;
+}
+
+.manageNews {
+    background-image:url(../images/menu/manageNews.png)!important;
+}
+
+.firstPage {
+    background-image:url(../images/menu/firstPage.png)!important;
+}
+
+.news {
+    background-image:url(../images/menu/news.png)!important;
+}
+
+.manageRole {
+    background-image:url(../images/menu/manageRole.png)!important;
+}
+
+.manageStorage {
+    background-image:url(../images/menu/manageStorage.png)!important;
+}
+
+.manageSystem {
+    background-image:url(../images/menu/manageSystem.png)!important;
+}
+
+.manageUser {
+    background-image:url(../images/menu/manageUser.png)!important;
+}
+
+.navigationMenu {
+    background-image:url(../images/menu/navigationMenu.png)!important;
+}
+
+.manageTransportation {
+    background-image:url(../images/menu/manageTransportation.png)!important;
+}
+
+.systemInformation {
+    background-image:url(../images/menu/systemInformation.png)!important;
+}
+
+.personalInformation {
+    background-image:url(../images/menu/personalInformation.png)!important;
+}
+
+.manageTransportationSheet {
+    background-image:url(../images/menu/manageTransportationSheet.png)!important;
+}
+
+.manageEntruckingSheet {
+    background-image:url(../images/menu/manageEntruckingSheet.png)!important;
+}
+
+.transportationTrack {
+    background-image:url(../images/menu/transportationTrack.png)!important;
+}
+
+.printSheet {
+    background-image:url(../images/menu/printSheet.png)!important;
+}
+
+.manageEnterStorageSheet {
+	background-image:url(../images/menu/manageEnterStorageSheet.png)!important;
+}
+
+.manageOutStorageSheet {
+	background-image:url(../images/menu/manageOutStorageSheet.png)!important;
+}
+
+.manageTransferStorageSheet {
+	background-image:url(../images/menu/manageTransferStorageSheet.png)!important;
+}
+
+.queryStorage {
+	background-image:url(../images/menu/queryStorage.png)!important;
+}
+
+.manageStocktake {
+	background-image:url(../images/menu/manageStocktake.png)!important;
+}
+
+.manageBarCode {
+    background-image:url(../images/menu/manageBarCode.png)!important;
+}
+
+.carInformation {
+	background-image:url(../images/menu/carInfo.png)!important;
+}
+
+.carType {
+	background-image:url(../images/menu/carType.png)!important;
+}
+
+.costCenter {
+	background-image:url(../images/menu/costCenter.png)!important;
+}
+
+.sellCenter {
+	background-image:url(../images/menu/sellCenter.png)!important;
+}
+
+.customerInformation {
+    background-image:url(../images/menu/customer.png)!important;
+}
+
+.transportationUnit {
+	background-image:url(../images/menu/transportationUnit.png)!important;
+}
+
+.transportationWay {
+    background-image:url(../images/menu/transportationWay.png)!important;
+}
+
+.goodsInformation {
+    background-image:url(../images/menu/goodsInfo.png)!important;
+}
+
+.transportationIncome {
+    background-image:url(../images/menu/transportationIncome.png)!important;
+}
+
+.transportationPay {
+    background-image:url(../images/menu/transportationPay.png)!important;
+}
+
+.enterStorageFinance {
+    background-image:url(../images/menu/enterStorageFinance.png)!important;
+}
+
+.outStorageFinance {
+    background-image:url(../images/menu/outStorageFinance.png)!important;
+}
+
+.transferStorageFinance {
+    background-image:url(../images/menu/transferStorageFinance.png)!important;
+}
+
+.storageFinance {
+    background-image:url(../images/menu/storageFinance.png)!important;
+}
+
+.manageWorker {
+    background-image:url(../images/menu/manageWorker.png)!important;
+}
+
+.trackCOD {
+    background-image:url(../images/menu/trackCOD.png)!important;
+}
+
+.manageSalary {
+    background-image:url(../images/menu/manageSalary.png)!important;
+}
+
+.financeLog {
+    background-image:url(../images/menu/financeLog.png)!important;
+}
+
+.entruckingPay {
+    background-image:url(../images/menu/entruckingPay.png)!important;
+}
+
+.cityInformation {
+    background-image:url(../images/menu/cityInfo.png)!important;
+}
+
+.specialStorageIncome {
+    background-image:url(../images/menu/specialStorageIncome.png)!important;
+}
+
+/**********************Common Icons***********************/
+
+.commonAllow {
+    background-image:url(../images/common/allow.png)!important;
+}
+.commonCheck {
+    background-image:url(../images/common/check.png)!important;
+}
+.calculator {
+    background-image:url(../images/common/calculator.png)!important;
+}
+
+.commonAdd {
+    background-image:url(../images/common/add.png)!important;
+}
+
+.commonCancel {
+    background-image:url(../images/common/cancel.png)!important;
+}
+
+.commonDelete {
+    background-image:url(../images/common/delete.png)!important;
+}
+
+.commonEdit {
+    background-image:url(../images/common/edit.png)!important;
+}
+
+.commonPrint {
+    background-image:url(../images/common/print.png)!important;
+}
+
+.commonQuery {
+    background-image:url(../images/common/query.png)!important;
+}
+
+.commonReset {
+    background-image:url(../images/common/reset.png)!important;
+}
+
+.commonSave {
+    background-image:url(../images/common/save.png)!important;
+}
+
+.commonExcel {
+    background-image:url(../images/common/excel.png)!important;
+}
+
+.commonImport {
+    background-image:url(../images/common/import.png)!important;
+}
+
+.commonExport {
+    background-image:url(../images/common/export.png)!important;
+}
+
+.commonDetail {
+    background-image:url(../images/common/detail.png)!important;
+}
+
+.commonCreateSheet {
+    background-image:url(../images/common/createSheet.png)!important;
+}
+
+.commonEditSheet {
+    background-image:url(../images/common/editSheet.png)!important;
+}
+
+.commonSaveAll {
+    background-image:url(../images/common/saveAll.png)!important;
+}
+
+.commonWarning {
+    background-image:url(../images/common/warning.png)!important;
+}
+
+
+/************************News Icons***********************/
+
+.attachment {
+    background-image:url(../images/news/attachment.png)!important;
+}
+
+/**********************Transportation Icons***********************/
+.abnormal {
+    background-image:url(../images/transportation/abnormal.png)!important;
+}
+
+.flow {
+    background-image:url(../images/transportation/flow.png)!important;
+}
+
+.trackDetail {
+    background-image:url(../images/transportation/trackDetail.png)!important;
+}
+
+/**********************Finance Icons***********************/
+.filing {
+    background-image:url(../images/finance/filing.png)!important;
+}
+
+.unfiling {
+    background-image:url(../images/finance/unfiling.png)!important;
+}
+
+/**********************System Icons***********************/
+
+.message {
+    background-image:url(../images/system/message.png)!important;
+}
+
+.editPersonalInfo {
+    background-image:url(../images/system/editPersonalInfo.png)!important;
+}
+
+.editUserPassword {
+    background-image:url(../images/system/lock.png)!important;
+}
+
+.editUser {
+    background-image:url(../images/system/editUser.png)!important;
+}
+
+.addUser {
+    background-image:url(../images/system/addUser.png)!important;
+}
+
+.deleteUser {
+    background-image:url(../images/system/deleteUser.png)!important;
+}
+
+.editRole {
+    background-image:url(../images/system/editRole.png)!important;
+}
+
+.addRole {
+    background-image:url(../images/system/addRole.png)!important;
+}
+
+.deleteRole {
+    background-image:url(../images/system/deleteRole.png)!important;
+}

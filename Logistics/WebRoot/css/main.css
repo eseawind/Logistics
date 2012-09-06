@@ -1,0 +1,68 @@
+
+html, body {
+       font:normal 12px verdana;
+       margin:0;
+       padding:0;
+       border:0 none;
+       overflow:hidden;
+       height:100%;
+   }
+    
+p {
+    margin:5px;
+}
+
+
+/***************************************************************/
+
+.abnormalFlow_ {
+	color:red;
+	font-weight:bold;
+	!important;
+}
+
+.normalFlow_ {
+	color:green;
+	font-weight:bold;
+	!important;
+}
+
+.redText_ {
+	color:red;
+	font-weight:bold;
+	!important;
+}
+
+/*!
+ * Ext JS Library 3.3.0
+ * Copyright(c) 2006-2010 Ext JS, Inc.
+ * licensing@extjs.com
+ * http://www.extjs.com/license
+ */
+/*
+ * FileUploadField component styles
+ */
+.x-form-file-wrap {
+    position: relative;
+    height: 22px;
+}
+.x-form-file-wrap .x-form-file {
+	position: absolute;
+	right: 0;
+	-moz-opacity: 0;
+	filter:alpha(opacity: 0);
+	opacity: 0;
+	z-index: 2;
+    height: 22px;
+}
+.x-form-file-wrap .x-form-file-btn {
+	position: absolute;
+	right: 0;
+	z-index: 1;
+}
+.x-form-file-wrap .x-form-file-text {
+    position: absolute;
+    left: 0;
+    z-index: 3;
+    color: #777;
+}

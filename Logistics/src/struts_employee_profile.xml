@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    			"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    			"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <package name="employee" extends="json-default">
+    	<action name="deleteEmployees" class="Logistics.Servlet.EmployeeProfileAction" method="deleteEmployees">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="updateEmployee" class="Logistics.Servlet.EmployeeProfileAction" method="updateEmployee">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="queryEmployee" class="Logistics.Servlet.EmployeeProfileAction" method="queryEmployee">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,qualifiedAmount,employeeList.*
+    		</param>
+    		</result>
+    	</action>
+    	<action name="queryAEmployee" class="Logistics.Servlet.EmployeeProfileAction" method="queryAEmployee">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,data.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="insertEmployee" class="Logistics.Servlet.EmployeeProfileAction" method="insertEmployee">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success
+    		</param>
+    		</result>
+    	</action>
+    	
+    	
+   			
+    </package>
+    
+    
+    
+    
+</struts>

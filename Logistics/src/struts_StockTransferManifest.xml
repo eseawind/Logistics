@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    			"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    			"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <package name="StockTransferManifest" extends="json-default">
+    
+    	
+    	<action name="StockTransferManifest.delete" class="Logistics.Servlet.StockTransferManifestAction" method="delete">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	<action name="StockTransferManifest.approve" class="Logistics.Servlet.StockTransferManifestAction" method="approve">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	<action name="StockTransferManifest.audit" class="Logistics.Servlet.StockTransferManifestAction" method="audit">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="StockTransferManifest.update" class="Logistics.Servlet.StockTransferManifestAction" method="update">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="StockTransferManifest.queryOne" class="Logistics.Servlet.StockTransferManifestAction" method="queryOne">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,data.*,resultMapList.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="StockTransferManifest.insert" class="Logistics.Servlet.StockTransferManifestAction" method="insert">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="StockTransferManifest.queryOnCondition" class="Logistics.Servlet.StockTransferManifestAction" method="queryOnCondition">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="StockTransferManifest.queryItems" class="Logistics.Servlet.StockTransferManifestAction" method="queryItems">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,data.*,resultMapList.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	
+    	
+    	
+    </package>
+    
+    
+    
+    
+</struts>

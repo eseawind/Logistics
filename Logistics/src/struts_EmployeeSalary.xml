@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    			"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    			"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <package name="EmployeeSalary" extends="json-default">
+    	<action name="ES.queryEmployeeSalary" class="Logistics.Servlet.EmployeeSalaryAction" method="queryEmployeeSalary">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="ES.queryAllEmployeesName" class="Logistics.Servlet.EmployeeSalaryAction" method="queryAllEmployeesName">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="ES.queryAEmployeeProfile" class="Logistics.Servlet.EmployeeSalaryAction" method="queryAEmployeeProfile">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,data.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="ES.insert" class="Logistics.Servlet.EmployeeSalaryAction" method="insertEmployeeSalary">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+   		
+   		<action name="ES.queryASalary" class="Logistics.Servlet.EmployeeSalaryAction" method="queryASalary">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,data.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="ES.update" class="Logistics.Servlet.EmployeeSalaryAction" method="updateEmployeeSalary">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="ES.delete" class="Logistics.Servlet.EmployeeSalaryAction" method="deleteEmployeeSalary">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    </package>
+    
+    
+    
+    
+</struts>

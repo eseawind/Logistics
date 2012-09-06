@@ -1,0 +1,13 @@
+
+
+.btnLogin {
+    background-image:url(../images/login/btnLogin.png)!important;
+}
+
+.btnLogout {
+    background-image:url(../images/login/btnLogout.png)!important;
+}
+
+.btnReset {
+    background-image:url(../images/login/btnReset.png)!important;
+}

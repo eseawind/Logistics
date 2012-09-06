@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    			"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    			"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <package name="Customer" extends="json-default">
+    
+    	<action name="Customer.queryNameID" class="Logistics.Servlet.CustomerAction" method="queryNameID">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*
+    		</param>
+    		</result>
+    	</action>
+    	<action name="Customer.delete" class="Logistics.Servlet.CustomerAction" method="delete">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	<action name="Customer.deleteQuote" class="Logistics.Servlet.CustomerAction" method="deleteQuote">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	<action name="Customer.update" class="Logistics.Servlet.CustomerAction" method="update">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="Customer.queryOne" class="Logistics.Servlet.CustomerAction" method="queryOne">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,data.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="Customer.insert" class="Logistics.Servlet.CustomerAction" method="insert">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	<action name="Customer.insertQuote" class="Logistics.Servlet.CustomerAction" method="insertQuote">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	<action name="Customer.queryOnCondition" class="Logistics.Servlet.CustomerAction" method="queryOnCondition">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	<action name="Customer.queryQuoteOnCondition" class="Logistics.Servlet.CustomerAction" method="queryQuoteOnCondition">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	
+    </package>
+    
+    
+    
+    
+</struts>

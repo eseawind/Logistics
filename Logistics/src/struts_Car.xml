@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    			"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    			"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <package name="Car" extends="json-default">
+    	
+    	<action name="Car.queryCarByContractor" class="Logistics.Servlet.CarAction" method="queryCarByContractor">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*
+    		</param>
+    		</result>
+    	</action>
+    	<action name="Car.queryNameID" class="Logistics.Servlet.CarAction" method="queryNameID">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*
+    		</param>
+    		</result>
+    	</action>
+    	<action name="Car.delete" class="Logistics.Servlet.CarAction" method="delete">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="Car.update" class="Logistics.Servlet.CarAction" method="update">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="Car.queryOne" class="Logistics.Servlet.CarAction" method="queryOne">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,data.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="Car.insert" class="Logistics.Servlet.CarAction" method="insert">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="Car.queryOnCondition" class="Logistics.Servlet.CarAction" method="queryOnCondition">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	
+    </package>
+    
+    
+    
+    
+</struts>

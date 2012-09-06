@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    			"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    			"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <package name="FreightIncome" extends="json-default">
+    
+    	<action name="FreightIncome.export" class="Logistics.Servlet.FreightIncomeAction" method="export">
+            <result name="success" type="stream">
+              <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">download</param>
+			  <param name="contentDisposition">attachment;filename="yun shu shou ru.xls"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+			
+			<result name="error" type="json">
+			<param name="includeProperties">
+    		message,success,valid
+    		</param>
+			</result>
+    	</action>
+    	
+    	<action name="FreightIncome.archive" class="Logistics.Servlet.FreightIncomeAction" method="archive">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="FreightIncome.unarchive" class="Logistics.Servlet.FreightIncomeAction" method="unarchive">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="FreightIncome.updateIncome" class="Logistics.Servlet.FreightIncomeAction" method="updateIncome">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="FreightIncome.queryOnCondition" class="Logistics.Servlet.FreightIncomeAction" method="queryOnCondition">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	
+    	
+    </package>
+    
+    
+    
+    
+</struts>

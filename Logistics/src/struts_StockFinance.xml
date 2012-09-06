@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    			"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    			"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <package name="StockFinance" extends="json-default">
+    
+    	<action name="StockFinance.export" class="Logistics.Servlet.StockFinanceAction" method="export">
+            <result name="success" type="stream">
+              <param name="contentType">application/octet-stream</param>
+			  <param name="inputName">download</param>
+			  <param name="contentDisposition">attachment;filename="stock finance.xls"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+			
+			<result name="error" type="json">
+			<param name="includeProperties">
+    		message,success,valid
+    		</param>
+			</result>
+    	</action>
+    	
+    	<action name="StockFinance.archive" class="Logistics.Servlet.StockFinanceAction" method="archive">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="StockFinance.unarchive" class="Logistics.Servlet.StockFinanceAction" method="unarchive">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="StockFinance.updateFinance" class="Logistics.Servlet.StockFinanceAction" method="updateFinance">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="StockFinance.queryOnCondition" class="Logistics.Servlet.StockFinanceAction" method="queryOnCondition">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	<action name="StockFinance.queryStockItems" class="Logistics.Servlet.StockFinanceAction" method="queryStockItems">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	
+    	
+    </package>
+    
+    
+    
+    
+</struts>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    			"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    			"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <package name="FreightManifest" extends="json-default">
+    
+    	<action name="FreightManifest.queryNameID" class="Logistics.Servlet.FreightManifestAction" method="queryNameID">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*
+    		</param>
+    		</result>
+    	</action>
+    	<action name="FreightManifest.delete" class="Logistics.Servlet.FreightManifestAction" method="delete">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="FreightManifest.update" class="Logistics.Servlet.FreightManifestAction" method="update">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="FreightManifest.queryOne" class="Logistics.Servlet.FreightManifestAction" method="queryOne">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,data.*,resultMapList.*
+    		</param>
+    		</result>
+    	</action>
+    	<action name="FreightManifest.print" class="Logistics.Servlet.FreightManifestAction" method="print">
+            <result name="success" type="stream">
+              <param name="contentType">html</param>
+			  <param name="inputName">download</param>
+			  <param name="contentDisposition">filename="fmprint.html"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+			<result name="error" type="json">
+			<param name="includeProperties">
+    		message,success,valid
+    		</param>
+			</result>
+    	</action>
+    	<action name="FreightManifest.printsofm" class="Logistics.Servlet.FreightManifestAction" method="printsofm">
+            <result name="success" type="stream">
+              <param name="contentType">html</param>
+			  <param name="inputName">download</param>
+			  <param name="contentDisposition">filename="fmprint.html"</param>
+			  <param name="bufferSize">1024</param>
+			</result>
+			<result name="error" type="json">
+			<param name="includeProperties">
+    		message,success,valid
+    		</param>
+			</result>
+    	</action>
+    	<action name="FreightManifest.insert" class="Logistics.Servlet.FreightManifestAction" method="insert">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="FreightManifest.queryOnCondition" class="Logistics.Servlet.FreightManifestAction" method="queryOnCondition">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="FreightManifest.queryConsigners" class="Logistics.Servlet.FreightManifestAction" method="queryConsigners">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount,data.*
+    		</param>
+    		</result>
+    	</action>
+    	<action name="FreightManifest.queryCustomerQuote" class="Logistics.Servlet.FreightManifestAction" method="queryCustomerQuote">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount,data.*
+    		</param>
+    		</result>
+    	</action>
+    	<action name="FreightManifest.queryConsigneeCompanies" class="Logistics.Servlet.FreightManifestAction" method="queryConsigneeCompanies">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="FreightManifest.queryConsignees" class="Logistics.Servlet.FreightManifestAction" method="queryConsignees">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="FreightManifest.queryCargoID" class="Logistics.Servlet.FreightManifestAction" method="queryCargoID">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    	
+    </package>
+    
+    
+    
+    
+</struts>

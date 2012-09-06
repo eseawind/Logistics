@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    			"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    			"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <package name="test" extends="json-default">
+    
+    	<action name="test" class="Logistics.Servlet.TestAction" method="test">
+    		<result type="json">
+    		</result>
+    	</action>
+    	
+   			
+    </package>
+    
+    
+    
+    
+</struts>

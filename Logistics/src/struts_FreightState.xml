@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    			"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    			"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <package name="FreightState" extends="json-default">
+    
+    	
+    	
+    	<action name="FreightState.update" class="Logistics.Servlet.FreightStateAction" method="update">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="FreightState.queryOne" class="Logistics.Servlet.FreightStateAction" method="queryOne">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,data.*,resultMapList.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="FreightState.queryWarnings" class="Logistics.Servlet.FreightStateAction" method="queryWarnings">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,data.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="FreightState.queryOnCondition" class="Logistics.Servlet.FreightStateAction" method="queryOnCondition">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount,data.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	
+    	
+    </package>
+    
+    
+    
+    
+</struts>

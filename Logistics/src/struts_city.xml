@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    			"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    			"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <package name="City" extends="json-default">
+    	
+    	<action name="City.queryAllNameID" class="Logistics.Servlet.CityAction" method="queryAllNameID">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="City.deleteCity" class="Logistics.Servlet.CityAction" method="deleteCity">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="City.updateCity" class="Logistics.Servlet.CityAction" method="updateCity">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="City.queryACity" class="Logistics.Servlet.CityAction" method="queryACity">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,data.*
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="City.insertCity" class="Logistics.Servlet.CityAction" method="insertCity">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid
+    		</param>
+    		</result>
+    	</action>
+    	
+    	<action name="City.queryCity" class="Logistics.Servlet.CityAction" method="queryCity">
+    		<result type="json">
+    		<param name="includeProperties">
+    		message,success,valid,resultMapList.*,qualifiedAmount
+    		</param>
+    		</result>
+    	</action>
+    </package>
+    
+    
+    
+    
+</struts>
